@@ -21,11 +21,9 @@ router.get('/setcookie', (request, response) => {
   response.send('Cookie have been saved successfully')
 })
 
+//a get route to show saved cookies through logging(1) and response(2)
 router.get('/getcookie', (request, response) => {
-  //show saved cookies through logging
   console.log(request.cookies)
-
-  //show saved cookies through response
   response.send(request.cookies)
 })
 
