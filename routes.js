@@ -9,7 +9,15 @@ router.get('/', (request, response) => {
 
 //a get route for adding a cookie
 router.get('/setcookie', (request, response) => {
-  response.cookie(`Cookie token name`,`fake encrypted cookie value`)
+  response.cookie(`Cookie token name`,`fake encrypted cookie value`, {
+
+    // security properties
+    expires: new Date('09 12 2022'), // or maxAge
+    secure: false, //false for localhost development
+    httpOnly: true,
+    sameSite: 'lax'
+  })
+
   response.send('Cookie have been saved successfully')
 })
 
