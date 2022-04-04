@@ -21,6 +21,13 @@ router.get('/setcookie', (request, response) => {
   response.send('Cookie have been saved successfully')
 })
 
+//a get route to delete a saved cookie
+
+router.get('./deletecookie', (request, response) => {
+  response.clearCookie()
+  response.send('Cookie deleted successfully')
+})
+
 //a get route to show saved cookies through logging(1) and response(2)
 router.get('/getcookie', (request, response) => {
   console.log(request.cookies)
